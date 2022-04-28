@@ -1,6 +1,8 @@
 import pygame
 import os
 pygame.font.init()
+pygame.mixer.init()
+
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -14,7 +16,11 @@ DARK_BLUE = (163, 237, 255)
 
 BORDER = pygame.Rect(WIDTH/2 - 5, 0, 5, HEIGHT)
 
-HEALTH_FONT = pygame.font.SysFont('arial', 30)
+BULLET_HIT_SOUND = pygame.mixer.Sound(os.path.join('assets', 'impact.mp3'))
+BULLET_FIRE_SOUND_1 = pygame.mixer.Sound(os.path.join('assets', 'laser-1.mp3'))
+BULLET_FIRE_SOUND_2 = pygame.mixer.Sound(os.path.join('assets', 'laser-2.mp3'))
+
+HEALTH_FONT = pygame.font.SysFont('arial', 25)
 WINNER_FONT = pygame.font.SysFont('arial', 100)
 
 FPS = 60
