@@ -3,6 +3,7 @@ from config import *
 
 
 def draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_health):
+    "Draws and updates the window with new content"
     WIN.blit(SPACE, (0, 0))
     pygame.draw.rect(WIN, WHITE, BORDER)
 
@@ -26,6 +27,7 @@ def draw_window(red, yellow, red_bullets, yellow_bullets, red_health, yellow_hea
 
 
 def draw_winner(text):
+    "Displays the winner screen"
     WIN.blit(BLACK_TRANSPERANT, (0, 0))
 
     draw_text = WINNER_FONT.render(text, 1, WHITE)

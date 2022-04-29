@@ -3,6 +3,7 @@ from config import *
 
 
 def yellow_handle_movement(keys_pressed, yellow):
+    "Handle Yellow spaceship's movement"
     if keys_pressed[pygame.K_a] and yellow.x - VEL > 0:  # LEFT
         yellow.x -= VEL
     if keys_pressed[pygame.K_d] and yellow.x + VEL + yellow.width < BORDER.x:  # RIGHT
@@ -14,6 +15,7 @@ def yellow_handle_movement(keys_pressed, yellow):
 
 
 def red_handle_movement(keys_pressed, red):
+    "Handle Red spaceship's movement"
     if keys_pressed[pygame.K_LEFT] and red.x - VEL > BORDER.x + BORDER.width:  # LEFT
         red.x -= VEL
     if keys_pressed[pygame.K_RIGHT] and red.x + VEL + red.width < WIDTH:  # RIGHT
@@ -25,6 +27,7 @@ def red_handle_movement(keys_pressed, red):
 
 
 def handle_bullets(yellow_bullets, red_bullets, yellow, red):
+    "Handle bullets movement and collision"
     for bullet in yellow_bullets:
         bullet.x += BULLET_VEL
         if red.colliderect(bullet):
